@@ -6,9 +6,7 @@ public class MovimentoJogador : MonoBehaviour
     [SerializeField] private Transform _pontoDeVerificacao;
     [SerializeField] private LayerMask _camadaDeColisao;
 
-
-    [SerializeField] private Animator _pistolaAnim;
-
+    private GerenciadorDeArmas _gerenciadorDeArmas;
     private Transform _cameraPrincipal;
     private CharacterController _characterController;
     private bool _estaNoChao;
@@ -21,6 +19,7 @@ public class MovimentoJogador : MonoBehaviour
     {
         _cameraPrincipal = Camera.main.transform;
         _characterController = GetComponent<CharacterController>();
+        _gerenciadorDeArmas = GetComponent<GerenciadorDeArmas>();
     }
 
     // Update is called once per frame
@@ -67,8 +66,9 @@ public class MovimentoJogador : MonoBehaviour
             _nivelStamina = Mathf.Max(0f, _nivelStamina);
         }
 
-        _pistolaAnim.SetBool("Mover", _direcaoMovimento != Vector3.zero);
-        _pistolaAnim.SetBool("Correr", _estaCorrendo && _nivelStamina > 0f);
+        _gerenciadorDeArmas.GetArmaAtual()._anim.SetBool("Mover", _direcaoMovimento != Vector3.zero);
+        _gerenciadorDeArmas.GetArmaAtual()._anim.SetBool("Correr", _estaCorrendo && _nivelStamina > 0f);
+
         _characterController.Move(_direcaoMovimento * Time.deltaTime * _velocidadeAtual);
     }
 
@@ -78,5 +78,10 @@ public class MovimentoJogador : MonoBehaviour
         {
             _nivelStamina += Time.deltaTime;
         }
+    }
+
+    public bool EstaCorrendo()
+    {
+        return _estaCorrendo && _nivelStamina > 0;
     }
 }
