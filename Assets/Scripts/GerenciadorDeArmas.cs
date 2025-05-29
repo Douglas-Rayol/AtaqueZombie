@@ -32,6 +32,8 @@ public class GerenciadorDeArmas : MonoBehaviour
         _armaSecundaria?.gameObject.SetActive(false);
 
         _movimentoJogador = GetComponent<MovimentoJogador>();
+
+        AtualiizarInterfaceArma(_armaPrimaria);
     }
 
     // Update is called once per frame
@@ -68,6 +70,8 @@ public class GerenciadorDeArmas : MonoBehaviour
             }
             _tempoRecoil = 0.2f;
             armaAtual.ProximoRecoil();
+
+            AtualiizarInterfaceArma(armaAtual);
         }
     }
 
@@ -108,6 +112,7 @@ public class GerenciadorDeArmas : MonoBehaviour
                 }
                 armaAtual.RecarregarArma(1);
                 yield return new WaitForSeconds(armaAtual._tempoDelayRecarregar);
+                AtualiizarInterfaceArma(armaAtual);
             }
         }
         else
@@ -116,6 +121,8 @@ public class GerenciadorDeArmas : MonoBehaviour
             int _balasParaRecarregar = Mathf.Min(armaAtual._capacidadeDoPente, armaAtual._municaoNoInventario) - armaAtual._municaoAtual;
             armaAtual.RecarregarArma(_balasParaRecarregar);
         }
+
+        AtualiizarInterfaceArma(armaAtual);
         _recarregando = false;
     }
 
@@ -171,7 +178,15 @@ public class GerenciadorDeArmas : MonoBehaviour
         {
             _armaSecundaria = novaArma;
         }
-
+        AtualiizarInterfaceArma(armaAtual);
         _trocaArma = false;
+    }
+
+    private void AtualiizarInterfaceArma(Arma armaAtual)
+    {
+        if(armaAtual != null)
+        {
+            InterfaceDeUsuario._Instance.AtualizarMunicao(armaAtual._municaoAtual, armaAtual._municaoNoInventario);
+        }
     }
 }

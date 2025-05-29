@@ -71,7 +71,7 @@ public enum ModelodaArma
     PISTOLA,
     SHOTGUN,
     M4A1,
-    SMG45,
+    SMG,
     AK47,
     LMG,
 }
