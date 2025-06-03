@@ -87,4 +87,9 @@ public class Jogador : MonoBehaviour
         _gerenciadorDeArmas.enabled = true;
         _cameraCinemachine.SetActive(true);
     }
+
+    public int GetPontos()
+    {
+        return _pontos;
+    }
 }

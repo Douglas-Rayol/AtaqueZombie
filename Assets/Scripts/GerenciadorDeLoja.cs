@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GerenciadorDeArma : MonoBehaviour
+public class GerenciadorDeLoja : MonoBehaviour
 {
     private bool _estaNaAreaDeCompra;
     private bool _lojaEstaAberta;
@@ -53,7 +53,7 @@ public class GerenciadorDeArma : MonoBehaviour
         Jogador.Instance.PausarJogador();
     }
 
-    private void Fecharloja()
+    public void Fecharloja()
     {
         Cursor.lockState = CursorLockMode.Locked;
         _lojaUI.SetActive(false);

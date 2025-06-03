@@ -363,6 +363,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArmaCardImage (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8616793081750989627, guid: 321e6f260e762b642960b9b70522ee37, type: 3}
+      propertyPath: _valorDaArma
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8616793081750989627, guid: 321e6f260e762b642960b9b70522ee37, type: 3}
+      propertyPath: _modelodaArma
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8616793081750989627, guid: 321e6f260e762b642960b9b70522ee37, type: 3}
+      propertyPath: _valorDaMunicao
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 8616793081750989627, guid: 321e6f260e762b642960b9b70522ee37, type: 3}
+      propertyPath: _gerenciadorDeLoja
+      value: 
+      objectReference: {fileID: 2017838652}
+    - target: {fileID: 8616793081750989627, guid: 321e6f260e762b642960b9b70522ee37, type: 3}
+      propertyPath: _gerenciadorDeArmas
+      value: 
+      objectReference: {fileID: 2017838649}
     - target: {fileID: 9008795198853773396, guid: 321e6f260e762b642960b9b70522ee37, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1405,7 +1425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89e6ae17c6e70648af2cb4cb28324e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tirosPorSegundo: 7
+  _tirosPorSegundo: 8
   _capacidadeDoPente: 30
   _municaoNoInventario: 70
   _quantidadeMaximaDeMunicaoNoInveentario: 70
@@ -1643,6 +1663,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArmaCardImage (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8616793081750989627, guid: 321e6f260e762b642960b9b70522ee37, type: 3}
+      propertyPath: _valorDaArma
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8616793081750989627, guid: 321e6f260e762b642960b9b70522ee37, type: 3}
+      propertyPath: _modelodaArma
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8616793081750989627, guid: 321e6f260e762b642960b9b70522ee37, type: 3}
+      propertyPath: _valorDaMunicao
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 8616793081750989627, guid: 321e6f260e762b642960b9b70522ee37, type: 3}
+      propertyPath: _gerenciadorDeLoja
+      value: 
+      objectReference: {fileID: 2017838652}
+    - target: {fileID: 8616793081750989627, guid: 321e6f260e762b642960b9b70522ee37, type: 3}
+      propertyPath: _gerenciadorDeArmas
+      value: 
+      objectReference: {fileID: 2017838649}
     - target: {fileID: 9008795198853773396, guid: 321e6f260e762b642960b9b70522ee37, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2966,7 +3006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89e6ae17c6e70648af2cb4cb28324e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tirosPorSegundo: 5
+  _tirosPorSegundo: 8
   _capacidadeDoPente: 24
   _municaoNoInventario: 48
   _quantidadeMaximaDeMunicaoNoInveentario: 48
@@ -3859,6 +3899,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArmaCardImage (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8616793081750989627, guid: 321e6f260e762b642960b9b70522ee37, type: 3}
+      propertyPath: _valorDaArma
+      value: 1400
+      objectReference: {fileID: 0}
+    - target: {fileID: 8616793081750989627, guid: 321e6f260e762b642960b9b70522ee37, type: 3}
+      propertyPath: _modelodaArma
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8616793081750989627, guid: 321e6f260e762b642960b9b70522ee37, type: 3}
+      propertyPath: _valorDaMunicao
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 8616793081750989627, guid: 321e6f260e762b642960b9b70522ee37, type: 3}
+      propertyPath: _gerenciadorDeLoja
+      value: 
+      objectReference: {fileID: 2017838652}
+    - target: {fileID: 8616793081750989627, guid: 321e6f260e762b642960b9b70522ee37, type: 3}
+      propertyPath: _gerenciadorDeArmas
+      value: 
+      objectReference: {fileID: 2017838649}
     - target: {fileID: 9008795198853773396, guid: 321e6f260e762b642960b9b70522ee37, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6017,6 +6077,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArmaCardImage (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8616793081750989627, guid: 321e6f260e762b642960b9b70522ee37, type: 3}
+      propertyPath: _valorDaArma
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 8616793081750989627, guid: 321e6f260e762b642960b9b70522ee37, type: 3}
+      propertyPath: _modelodaArma
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8616793081750989627, guid: 321e6f260e762b642960b9b70522ee37, type: 3}
+      propertyPath: _valorDaMunicao
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8616793081750989627, guid: 321e6f260e762b642960b9b70522ee37, type: 3}
+      propertyPath: _gerenciadorDeLoja
+      value: 
+      objectReference: {fileID: 2017838652}
+    - target: {fileID: 8616793081750989627, guid: 321e6f260e762b642960b9b70522ee37, type: 3}
+      propertyPath: _gerenciadorDeArmas
+      value: 
+      objectReference: {fileID: 2017838649}
     - target: {fileID: 9008795198853773396, guid: 321e6f260e762b642960b9b70522ee37, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6297,7 +6377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _vidaMaxima: 100
-  _pontos: 0
+  _pontos: 5000
   _cameraCinemachine: {fileID: 1658872437}
 --- !u!114 &2017838652
 MonoBehaviour:
@@ -6465,6 +6545,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArmaCardImage (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8616793081750989627, guid: 321e6f260e762b642960b9b70522ee37, type: 3}
+      propertyPath: _valorDaArma
+      value: 1800
+      objectReference: {fileID: 0}
+    - target: {fileID: 8616793081750989627, guid: 321e6f260e762b642960b9b70522ee37, type: 3}
+      propertyPath: _modelodaArma
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8616793081750989627, guid: 321e6f260e762b642960b9b70522ee37, type: 3}
+      propertyPath: _valorDaMunicao
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 8616793081750989627, guid: 321e6f260e762b642960b9b70522ee37, type: 3}
+      propertyPath: _gerenciadorDeLoja
+      value: 
+      objectReference: {fileID: 2017838652}
+    - target: {fileID: 8616793081750989627, guid: 321e6f260e762b642960b9b70522ee37, type: 3}
+      propertyPath: _gerenciadorDeArmas
+      value: 
+      objectReference: {fileID: 2017838649}
     - target: {fileID: 9008795198853773396, guid: 321e6f260e762b642960b9b70522ee37, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6914,6 +7014,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArmaCardImage
       objectReference: {fileID: 0}
+    - target: {fileID: 8616793081750989627, guid: 321e6f260e762b642960b9b70522ee37, type: 3}
+      propertyPath: _gerenciadorDeLoja
+      value: 
+      objectReference: {fileID: 2017838652}
+    - target: {fileID: 8616793081750989627, guid: 321e6f260e762b642960b9b70522ee37, type: 3}
+      propertyPath: _gerenciadorDeArmas
+      value: 
+      objectReference: {fileID: 2017838649}
     - target: {fileID: 9008795198853773396, guid: 321e6f260e762b642960b9b70522ee37, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

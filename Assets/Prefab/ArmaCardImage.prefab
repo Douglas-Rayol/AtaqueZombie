@@ -120,7 +120,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8784283898227400517}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8616793081750989627}
+        m_TargetAssemblyTypeName: ArmaCard, Assembly-CSharp
+        m_MethodName: ComprarMunicao
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1300662766389546035
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,6 +493,7 @@ GameObject:
   - component: {fileID: 9008795198853773396}
   - component: {fileID: 3560360068115942600}
   - component: {fileID: 2017814334641295998}
+  - component: {fileID: 8616793081750989627}
   m_Layer: 5
   m_Name: ArmaCardImage
   m_TagString: Untagged
@@ -549,6 +562,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8616793081750989627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4582397696038325853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffe718a49f66a3143be420ffce53b4f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _comprarArma: {fileID: 75879172839463177}
+  _comprarMunicao: {fileID: 7177296442815163591}
+  _valorDaArma: 500
+  _valorDaMunicao: 200
+  _modelodaArma: 0
+  _gerenciadorDeArmas: {fileID: 0}
+  _gerenciadorDeLoja: {fileID: 0}
 --- !u!1 &4620918632211615605
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,4 +837,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7317016089040374080}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8616793081750989627}
+        m_TargetAssemblyTypeName: ArmaCard, Assembly-CSharp
+        m_MethodName: ComprarArma
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

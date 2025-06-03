@@ -99,7 +99,7 @@ public class GerenciadorDeArmas : MonoBehaviour
         armaAtual._anim.SetTrigger("Recarregar");
         armaAtual._anim.SetBool("Mirar", false);
 
-        if(armaAtual._modelodaArma == ModelodaArma.SHOTGUN)
+        if(armaAtual._modelodaArma == ModeloDaArma.SHOTGUN)
         {
             int _balasParaRecarregar = Mathf.Min(armaAtual._capacidadeDoPente, armaAtual._municaoNoInventario) - armaAtual._municaoAtual;
             yield return new WaitForSeconds(armaAtual._tempoDelayRecarregar);
@@ -187,6 +187,27 @@ public class GerenciadorDeArmas : MonoBehaviour
         if(armaAtual != null)
         {
             InterfaceDeUsuario._Instance.AtualizarMunicao(armaAtual._municaoAtual, armaAtual._municaoNoInventario);
+        }
+    }
+
+    public void EquiparNovaArma(ModeloDaArma modeloDaArma)
+    {
+        foreach(var arma in _armasDisponiveis)
+        {
+            if(arma._modelodaArma == modeloDaArma)
+            {
+                StartCoroutine(AlterarArma(arma));
+                break;
+            }
+        }
+    }
+
+    public void EquiparMunicao(ModeloDaArma modeloDaArma)
+    {
+        foreach(var arma in _armasDisponiveis)
+        {
+            arma.CarregarInventario();
+            AtualiizarInterfaceArma(GetArmaAtual());
         }
     }
 }

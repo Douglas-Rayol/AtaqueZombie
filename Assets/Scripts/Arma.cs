@@ -21,7 +21,7 @@ public class Arma : MonoBehaviour
     [Range(0, 1)]
     public float _multiplicadorDanoReduzindo;
 
-    public ModelodaArma _modelodaArma;
+    public ModeloDaArma _modelodaArma;
     public Animator _anim;
 
     public float _tempoDelayRecarregar;
@@ -64,9 +64,14 @@ public class Arma : MonoBehaviour
         bool miraAtiva = _anim.GetBool("Mirar");
         _anim.SetBool("Mirar", !miraAtiva);
     }
+
+    public void CarregarInventario()
+    {
+        _municaoNoInventario = _quantidadeMaximaDeMunicaoNoInveentario;
+    }
 }
 
-public enum ModelodaArma
+public enum ModeloDaArma
 {
     PISTOLA,
     SHOTGUN,
