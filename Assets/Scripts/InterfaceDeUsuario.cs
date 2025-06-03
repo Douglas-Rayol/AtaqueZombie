@@ -10,6 +10,10 @@ public class InterfaceDeUsuario : MonoBehaviour
 
     [SerializeField] private TMP_Text _municaoText;
 
+    [SerializeField] private Slider _barraDeVidaSlider;
+
+    [SerializeField] private TMP_Text _pontosText;
+
     private void Awake()
     {
         if (_Instance == null)
@@ -36,5 +40,16 @@ public class InterfaceDeUsuario : MonoBehaviour
     public void AtualizarMunicao(int municaoAtual, int municaoNoInventario)
     {
         _municaoText.text = municaoAtual + "/" + municaoNoInventario;
+    }
+
+    public void AtualizarBarraDeVida(int _vidaAtual, int _vidaMaxima)
+    {
+        _barraDeVidaSlider.maxValue = _vidaMaxima;
+        _barraDeVidaSlider.value = _vidaAtual;
+    }
+
+    public void AtualizarPontos(int _variacao, int saldoAtual)
+    {
+        _pontosText.text = "Pontos: " + saldoAtual;
     }
 }
