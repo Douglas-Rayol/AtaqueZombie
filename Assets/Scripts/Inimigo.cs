@@ -48,4 +48,11 @@ public class Inimigo : MonoBehaviour
         _animator.SetTrigger("Ataque");
         _tempoProximoAtaque = Time.time + _intervaloEntreAtaque;
     }
+
+    public void Morrer()
+    {
+        enabled = false;
+        _animator.SetTrigger("Morrer");
+        Destroy(gameObject, 2f);
+    }
 }

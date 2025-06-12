@@ -66,7 +66,33 @@ public class GerenciadorDeArmas : MonoBehaviour
             RaycastHit hit;
             if(Physics.Raycast(_cameraPrincipal.position, _cameraPrincipal.forward, out hit, 1000, _tiroLayerMask, QueryTriggerInteraction.Ignore))
             {
-                Instantiate(_efeitoImpactoDeTiro, hit.point, Quaternion.LookRotation(hit.normal));
+                var parteDoCorpoInimigo = hit.transform.GetComponent<ParteDoCorpo>();
+                if (parteDoCorpoInimigo)
+                {
+                    Instantiate(_efeitoDeSangue, hit.point, Quaternion.LookRotation(hit.normal));
+
+                    var vidaInimigo = parteDoCorpoInimigo.transform.root.GetComponent<VidaInimigo>();
+
+                    int dano = armaAtual.GetDano(hit.distance, parteDoCorpoInimigo.nivelDeDano);
+
+                    bool inimigomorto = vidaInimigo.ReduzirVida(dano);
+
+                    if (inimigomorto)
+                    {
+                        if(parteDoCorpoInimigo.nivelDeDano == NivelDeDano.ALTO)
+                        {
+                            Jogador.Instance.AdicionarPontos(vidaInimigo.GetPontosDerrota() * 2);
+                        }
+                        else
+                        {
+                            Jogador.Instance.AdicionarPontos(vidaInimigo.GetPontosDerrota());
+                        }
+                    }
+                }
+                else
+                {
+                    Instantiate(_efeitoImpactoDeTiro, hit.point, Quaternion.LookRotation(hit.normal));
+                }
             }
             _tempoRecoil = 0.2f;
             armaAtual.ProximoRecoil();
@@ -91,6 +117,8 @@ public class GerenciadorDeArmas : MonoBehaviour
             StopCoroutine(_recarragarCoroutine);
         }
         _recarregando = false;
+
+        InterfaceDeUsuario._Instance.ExibirMira(true);
     }
 
     private IEnumerator ExecutarRecarga(Arma armaAtual)

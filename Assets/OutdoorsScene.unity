@@ -3320,6 +3320,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3703813894914855495, guid: 3fdccd5bceb54644fa6b93bb7c876953, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1025889148}
+    - targetCorrespondingSourceObject: {fileID: 3703813894914855495, guid: 3fdccd5bceb54644fa6b93bb7c876953, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1025889150}
     - targetCorrespondingSourceObject: {fileID: 3703813894914855499, guid: 3fdccd5bceb54644fa6b93bb7c876953, type: 3}
       insertIndex: -1
       addedObject: {fileID: 593194838}
@@ -3446,6 +3449,47 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1025889150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025889147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5f8c0e947622284bb7f4f4e1411a3fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _vida: 100
+  _pontosDerrota: 25
+  OnMorrer:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1025889148}
+        m_TargetAssemblyTypeName: Inimigo, Assembly-CSharp
+        m_MethodName: Morrer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1025889149}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1028640517
 GameObject:
   m_ObjectHideFlags: 0
@@ -7158,6 +7202,7 @@ MonoBehaviour:
   _municaoText: {fileID: 1857768860}
   _barraDeVidaSlider: {fileID: 1315264984}
   _pontosText: {fileID: 2142249161}
+  _miraImage: {fileID: 1968163754}
 --- !u!114 &2017838651
 MonoBehaviour:
   m_ObjectHideFlags: 0

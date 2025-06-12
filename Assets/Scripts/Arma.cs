@@ -63,11 +63,37 @@ public class Arma : MonoBehaviour
     {
         bool miraAtiva = _anim.GetBool("Mirar");
         _anim.SetBool("Mirar", !miraAtiva);
+
+        InterfaceDeUsuario._Instance.ExibirMira(miraAtiva);
     }
 
     public void CarregarInventario()
     {
         _municaoNoInventario = _quantidadeMaximaDeMunicaoNoInveentario;
+    }
+
+    public int GetDano(float distancia, NivelDeDano nivelDeDano)
+    {
+        int dano = 0;
+        switch (nivelDeDano)
+        {
+            case NivelDeDano.BAIXO:
+                dano = _danoBaixo;
+                break;
+            case NivelDeDano.MEDIO:
+                dano = _danoMedio;
+                break;
+            case NivelDeDano.ALTO:
+                dano = _danoAlto;
+                break;
+        }
+
+        if(distancia > _distanciaParaDanoMaximo)
+        {
+            dano = (int)(dano * _multiplicadorDanoReduzindo);
+        }
+
+        return dano;
     }
 }
 

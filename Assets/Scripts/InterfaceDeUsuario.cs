@@ -14,6 +14,8 @@ public class InterfaceDeUsuario : MonoBehaviour
 
     [SerializeField] private TMP_Text _pontosText;
 
+    [SerializeField] private Image _miraImage;
+
     private void Awake()
     {
         if (_Instance == null)
@@ -51,5 +53,10 @@ public class InterfaceDeUsuario : MonoBehaviour
     public void AtualizarPontos(int _variacao, int saldoAtual)
     {
         _pontosText.text = "Pontos: " + saldoAtual;
+    }
+
+    public void ExibirMira(bool exibirMira)
+    {
+        _miraImage.enabled = exibirMira;
     }
 }
