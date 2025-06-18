@@ -10,8 +10,8 @@ public class Inimigo : MonoBehaviour
 
     [SerializeField] private float _distanciaAtaque;
     [SerializeField] private float _intervaloEntreAtaque = 1f;
-    [SerializeField] private HitBoxInimigo _hitBoxInimigo;
     [SerializeField] private int _dano;
+    [SerializeField] private HitBoxInimigo _hitBoxInimigo;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
