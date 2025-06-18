@@ -10,6 +10,8 @@ public class Inimigo : MonoBehaviour
 
     [SerializeField] private float _distanciaAtaque;
     [SerializeField] private float _intervaloEntreAtaque = 1f;
+    [SerializeField] private HitBoxInimigo _hitBoxInimigo;
+    [SerializeField] private int _dano;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,16 +32,18 @@ public class Inimigo : MonoBehaviour
 
             if(Time.time > _tempoProximoAtaque)
             {
-                Atacar();
+                PrepararAtaque();
             }
         }
         else
         {
             _navMeshAgent.SetDestination(_jogador.position);
         }
+
+        _animator.SetBool("Mover", _navMeshAgent.velocity.magnitude >= 0.1f);
     }
 
-    private void Atacar()
+    private void PrepararAtaque()
     {
         Vector3 direcaoParaJogador = (_jogador.position - transform.position).normalized;
         Quaternion rotacaoParaJogador = Quaternion.LookRotation(direcaoParaJogador);
@@ -54,5 +58,10 @@ public class Inimigo : MonoBehaviour
         enabled = false;
         _animator.SetTrigger("Morrer");
         Destroy(gameObject, 2f);
+    }
+
+    public void RealizarAtaque()
+    {
+        Jogador.Instance.ReduzirVida(_dano);
     }
 }
