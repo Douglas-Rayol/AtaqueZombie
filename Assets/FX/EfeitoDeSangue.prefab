@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4885190238327345844}
   - component: {fileID: 5039669038473953990}
   - component: {fileID: 1866260647338167057}
+  - component: {fileID: -1385865182417005772}
   m_Layer: 0
   m_Name: EfeitoDeSangue
   m_TagString: Untagged
@@ -4662,6 +4663,19 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &-1385865182417005772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687632172149952028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89aade7abee8c57488d70fe601127b26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tempoDeVida: 2
 --- !u!1 &5138805147477522712
 GameObject:
   m_ObjectHideFlags: 0
