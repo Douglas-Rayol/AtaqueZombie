@@ -92,4 +92,10 @@ public class Jogador : MonoBehaviour
     {
         return _pontos;
     }
+
+    public void RestaurarVida()
+    {
+        _vidaAtual = _vidaMaxima;
+        AtualizarBarraDeVida();
+    }
 }

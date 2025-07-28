@@ -3081,7 +3081,7 @@ Transform:
   m_GameObject: {fileID: 7108675353991786978}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.8476262, y: 0, z: 5.810874}
+  m_LocalPosition: {x: 2.8476262, y: -0.04, z: 5.810874}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3150,7 +3150,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7108675353991786978}
   m_Enabled: 1
-  m_AgentTypeID: 0
+  m_AgentTypeID: -334000983
   m_Radius: 0.5
   m_Speed: 2
   m_Acceleration: 2
@@ -3178,8 +3178,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _distanciaAtaque: 1.5
   _intervaloEntreAtaque: 2
-  _hitBoxInimigo: {fileID: 6903927544925380372}
   _dano: 10
+  _hitBoxInimigo: {fileID: 6903927544925380372}
 --- !u!114 &6536620984695394122
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16,6 +16,9 @@ public class InterfaceDeUsuario : MonoBehaviour
 
     [SerializeField] private Image _miraImage;
 
+    [SerializeField] private TMP_Text _ondaAtualText;
+    [SerializeField] private TMP_Text _tempoRestanteProximaOndaText;
+
     private void Awake()
     {
         if (_Instance == null)
@@ -58,5 +61,15 @@ public class InterfaceDeUsuario : MonoBehaviour
     public void ExibirMira(bool exibirMira)
     {
         _miraImage.enabled = exibirMira;
+    }
+
+    public void AtualizarondaAtual(int ondaAtual)
+    {
+        _ondaAtualText.text = "onda " + ondaAtual;
+    }
+
+    public void AtualizarTempoRestante(float tempo)
+    {
+        _tempoRestanteProximaOndaText.text = tempo.ToString("00.0");
     }
 }

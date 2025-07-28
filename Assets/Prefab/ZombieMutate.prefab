@@ -1093,7 +1093,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3601385673871563176}
   m_Enabled: 1
-  m_AgentTypeID: 0
+  m_AgentTypeID: -334000983
   m_Radius: 0.5
   m_Speed: 1.5
   m_Acceleration: 2
@@ -1121,8 +1121,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _distanciaAtaque: 2
   _intervaloEntreAtaque: 3
-  _hitBoxInimigo: {fileID: 1016040278488254960}
   _dano: 20
+  _hitBoxInimigo: {fileID: 1016040278488254960}
 --- !u!114 &6286517587410001178
 MonoBehaviour:
   m_ObjectHideFlags: 0

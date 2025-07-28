@@ -218,8 +218,8 @@ MonoBehaviour:
   OnMorrer:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Inimigo, Assembly-CSharp
+      - m_Target: {fileID: 1711345026932367682}
+        m_TargetAssemblyTypeName: InimigoVoador, Assembly-CSharp
         m_MethodName: Morrer
         m_Mode: 1
         m_Arguments:
