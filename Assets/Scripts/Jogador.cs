@@ -11,6 +11,7 @@ public class Jogador : MonoBehaviour
 
     private int _vidaAtual;
     private bool _estaMorto;
+    private int _monstrosDerrotados;
 
     private MovimentoJogador _movimentoJogador;
     private GerenciadorDeArmas _gerenciadorDeArmas;
@@ -55,6 +56,7 @@ public class Jogador : MonoBehaviour
     {
         _estaMorto = true;
         Time.timeScale = 0;
+        InterfaceDeUsuario._Instance.ExibirGameover();
     }
 
     private void AtualizarBarraDeVida()
@@ -97,5 +99,15 @@ public class Jogador : MonoBehaviour
     {
         _vidaAtual = _vidaMaxima;
         AtualizarBarraDeVida();
+    }
+
+    public void NovoMonstroDerrotados()
+    {
+        _monstrosDerrotados++;
+    }
+
+    public int GetMonstrosDerrotados()
+    {
+        return _monstrosDerrotados;
     }
 }

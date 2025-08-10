@@ -33,7 +33,7 @@ public class GerenciadorDeArmas : MonoBehaviour
 
         _movimentoJogador = GetComponent<MovimentoJogador>();
 
-        AtualiizarInterfaceArma(_armaPrimaria);
+        AtualizarInterfaceArma(_armaPrimaria);
     }
 
     // Update is called once per frame
@@ -79,6 +79,8 @@ public class GerenciadorDeArmas : MonoBehaviour
 
                     if (inimigomorto)
                     {
+                        Jogador.Instance.NovoMonstroDerrotados();
+
                         if(parteDoCorpoInimigo.nivelDeDano == NivelDeDano.ALTO)
                         {
                             Jogador.Instance.AdicionarPontos(vidaInimigo.GetPontosDerrota() * 2);
@@ -97,7 +99,7 @@ public class GerenciadorDeArmas : MonoBehaviour
             _tempoRecoil = 0.2f;
             armaAtual.ProximoRecoil();
 
-            AtualiizarInterfaceArma(armaAtual);
+            AtualizarInterfaceArma(armaAtual);
         }
     }
 
@@ -120,7 +122,7 @@ public class GerenciadorDeArmas : MonoBehaviour
 
         InterfaceDeUsuario._Instance.ExibirMira(true);
     }
-
+ 
     private IEnumerator ExecutarRecarga(Arma armaAtual)
     {
         _recarregando = true;
@@ -140,7 +142,7 @@ public class GerenciadorDeArmas : MonoBehaviour
                 }
                 armaAtual.RecarregarArma(1);
                 yield return new WaitForSeconds(armaAtual._tempoDelayRecarregar);
-                AtualiizarInterfaceArma(armaAtual);
+                AtualizarInterfaceArma(armaAtual);
             }
         }
         else
@@ -150,7 +152,7 @@ public class GerenciadorDeArmas : MonoBehaviour
             armaAtual.RecarregarArma(_balasParaRecarregar);
         }
 
-        AtualiizarInterfaceArma(armaAtual);
+        AtualizarInterfaceArma(armaAtual);
         _recarregando = false;
     }
 
@@ -206,11 +208,11 @@ public class GerenciadorDeArmas : MonoBehaviour
         {
             _armaSecundaria = novaArma;
         }
-        AtualiizarInterfaceArma(armaAtual);
+        AtualizarInterfaceArma(armaAtual);
         _trocaArma = false;
     }
 
-    private void AtualiizarInterfaceArma(Arma armaAtual)
+    private void AtualizarInterfaceArma(Arma armaAtual)
     {
         if(armaAtual != null)
         {
@@ -235,7 +237,7 @@ public class GerenciadorDeArmas : MonoBehaviour
         foreach(var arma in _armasDisponiveis)
         {
             arma.CarregarInventario();
-            AtualiizarInterfaceArma(GetArmaAtual());
+            AtualizarInterfaceArma(GetArmaAtual());
         }
     }
 }

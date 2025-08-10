@@ -19,6 +19,9 @@ public class InterfaceDeUsuario : MonoBehaviour
     [SerializeField] private TMP_Text _ondaAtualText;
     [SerializeField] private TMP_Text _tempoRestanteProximaOndaText;
 
+    [SerializeField] private GameObject _gameoverPanel;
+    [SerializeField] private TMP_Text _OndaText;
+    [SerializeField] private TMP_Text _MonstrosText;
     private void Awake()
     {
         if (_Instance == null)
@@ -66,10 +69,19 @@ public class InterfaceDeUsuario : MonoBehaviour
     public void AtualizarondaAtual(int ondaAtual)
     {
         _ondaAtualText.text = "onda " + ondaAtual;
+        _OndaText.text = "Ondas: " + ondaAtual;
     }
 
     public void AtualizarTempoRestante(float tempo)
     {
         _tempoRestanteProximaOndaText.text = tempo.ToString("00.0");
+    }
+
+    public void ExibirGameover()
+    {
+        _gameoverPanel.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+
+        _MonstrosText.text = "Monstros Derrotados: " + Jogador.Instance.GetMonstrosDerrotados();
     }
 }

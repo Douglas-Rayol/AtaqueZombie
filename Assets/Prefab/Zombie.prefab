@@ -1308,7 +1308,7 @@ Transform:
   m_GameObject: {fileID: 3632978032998677668}
   serializedVersion: 2
   m_LocalRotation: {x: -5.652095e-16, y: 3.9007545e-17, z: -0.06885055, w: 0.997627}
-  m_LocalPosition: {x: -0.103208095, y: 3.5527136e-17, z: -1.3389592e-18}
+  m_LocalPosition: {x: -0.103208095, y: 0, z: -1.3389592e-18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2094,7 +2094,7 @@ Transform:
   m_GameObject: {fileID: 4785868811289442179}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0131818345, y: 0.7069839, z: 0.0131818345, w: 0.7069839}
-  m_LocalPosition: {x: -1.9709482e-17, y: -0.01029337, z: 0.9146167}
+  m_LocalPosition: {x: -1.9709482e-17, y: 0, z: 0.9146167}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2193,7 +2193,7 @@ Transform:
   m_GameObject: {fileID: 5094076083953824999}
   serializedVersion: 2
   m_LocalRotation: {x: 0.01120584, y: 0.029477883, z: 0.0038431499, w: 0.99949527}
-  m_LocalPosition: {x: 0.02110727, y: 0.0045690667, z: -0.08196866}
+  m_LocalPosition: {x: 0.02110727, y: 0, z: -0.08196866}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2359,7 +2359,7 @@ Transform:
   m_GameObject: {fileID: 5445808411748141671}
   serializedVersion: 2
   m_LocalRotation: {x: -0.029477883, y: 0.01120584, z: 0.99949527, w: -0.0038431499}
-  m_LocalPosition: {x: 0.02110727, y: 0.0045690667, z: 0.08196866}
+  m_LocalPosition: {x: 0.02110727, y: 0, z: 0.08196866}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3061,7 +3061,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4550072801873672686}
   - component: {fileID: 8903942748762327152}
-  - component: {fileID: 6309260111332059762}
   - component: {fileID: 4708737694264044783}
   - component: {fileID: 522995308749560150}
   - component: {fileID: 6536620984695394122}
@@ -3081,7 +3080,7 @@ Transform:
   m_GameObject: {fileID: 7108675353991786978}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.8476262, y: -0.04, z: 5.810874}
+  m_LocalPosition: {x: 2.8476262, y: -0.09, z: 5.810874}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3112,36 +3111,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!205 &6309260111332059762
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7108675353991786978}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: -0.0012483597, y: 0.85743785, z: -0.013152435}
-  m_Size: 1.7556667
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.25
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 3155048839725064518}
-    - renderer: {fileID: 2730795881534988372}
-  - screenRelativeHeight: 0.125
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 7959142269817896175}
-    - renderer: {fileID: 8832941044732719807}
-  - screenRelativeHeight: 0.01
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 3566449984148071376}
-    - renderer: {fileID: 5890004450206350567}
-  m_Enabled: 1
 --- !u!195 &4708737694264044783
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3351,7 +3320,7 @@ Transform:
   m_GameObject: {fileID: 7356382962491091152}
   serializedVersion: 2
   m_LocalRotation: {x: -0.009546271, y: -0.029168788, z: -0.09044412, w: 0.9954285}
-  m_LocalPosition: {x: -0.4111501, y: -1.936229e-15, z: 1.7763567e-16}
+  m_LocalPosition: {x: -0.4111501, y: 0, z: 1.7763567e-16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3380,7 +3349,7 @@ CapsuleCollider:
   m_Radius: 0.06
   m_Height: 0.3
   m_Direction: 1
-  m_Center: {x: -0.03, y: 0.07, z: 0}
+  m_Center: {x: -0.04, y: 0.07, z: 0}
 --- !u!114 &350087327154479599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3820,7 +3789,7 @@ CapsuleCollider:
   m_Radius: 0.06
   m_Height: 0.3
   m_Direction: 1
-  m_Center: {x: 0.03, y: -0.07, z: 0}
+  m_Center: {x: 0.04, y: -0.07, z: 0}
 --- !u!114 &5817093333299287351
 MonoBehaviour:
   m_ObjectHideFlags: 0
