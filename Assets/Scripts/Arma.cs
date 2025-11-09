@@ -26,6 +26,8 @@ public class Arma : MonoBehaviour
 
     public float _tempoDelayRecarregar;
 
+    [SerializeField] private AudioSource _disparoAudioSource;
+
     private void Awake()
     {
         _municaoAtual = _capacidadeDoPente;
@@ -51,6 +53,7 @@ public class Arma : MonoBehaviour
         _municaoAtual--;
         _anim.SetTrigger("Atirar");
         _efeitoDisparo.Play();
+        _disparoAudioSource.PlayOneShot(_disparoAudioSource.clip);
     }
 
     public void RecarregarArma(int quantidade)

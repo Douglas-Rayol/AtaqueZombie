@@ -14,6 +14,9 @@ public class InimigoVoador : MonoBehaviour
     [SerializeField] private GameObject _bolaAcida;
     [SerializeField] private Transform _pontoDeLancamento;
 
+    [SerializeField] private AudioSource _ataqueAudio;
+
+
     
     private void Start()
     {
@@ -44,6 +47,7 @@ public class InimigoVoador : MonoBehaviour
 
     private void Ataque()
     {
+        _ataqueAudio.Play();
         _tempoProximoAtaque = Time.time + _intervaloEntreAtaque;
 
         _pontoDeLancamento.LookAt(_jogador);

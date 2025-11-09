@@ -9,10 +9,20 @@ public class MovimentoJogador : MonoBehaviour
     private GerenciadorDeArmas _gerenciadorDeArmas;
     private Transform _cameraPrincipal;
     private CharacterController _characterController;
+
     private bool _estaNoChao;
     private float _velocidadeVertical;
+
     private bool _estaCorrendo;
     private float _nivelStamina;
+
+    [SerializeField] private AudioSource _passosAudioSource;
+    [SerializeField] private AudioClip[] _passosAudioClips;
+    [SerializeField] private AudioClip _pularAudioClip;
+
+    [SerializeField] private float _intervaloPassosAndando;
+    [SerializeField] private float _intervaloPassosCorrendo;
+    private float _temporizadorPassos;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,6 +30,8 @@ public class MovimentoJogador : MonoBehaviour
         _cameraPrincipal = Camera.main.transform;
         _characterController = GetComponent<CharacterController>();
         _gerenciadorDeArmas = GetComponent<GerenciadorDeArmas>();
+
+        _temporizadorPassos = _intervaloPassosAndando;
     }
 
     // Update is called once per frame
@@ -28,6 +40,7 @@ public class MovimentoJogador : MonoBehaviour
         AplicarGravidade();
         ProcessarMovimento();
         AtualizarStamina();
+        SonsDePassos();
     }
 
     private void AplicarGravidade()
@@ -37,6 +50,7 @@ public class MovimentoJogador : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && _estaNoChao)
         {
             _velocidadeVertical = 4.5f;
+            _passosAudioSource.PlayOneShot(_pularAudioClip);
         }
 
         if(!_estaNoChao || _velocidadeVertical > Physics.gravity.y)
@@ -74,16 +88,33 @@ public class MovimentoJogador : MonoBehaviour
 
     private void AtualizarStamina()
     {
-        if(!_estaCorrendo && _nivelStamina < 2f)
+        if(!_estaCorrendo && _nivelStamina < 3f)
         {
             _nivelStamina += Time.deltaTime;
         }
 
-        InterfaceDeUsuario._Instance.AtualizarStamina(_nivelStamina / 2f);
+        InterfaceDeUsuario._Instance.AtualizarStamina(_nivelStamina / 3f);
     }
 
     public bool EstaCorrendo()
     {
         return _estaCorrendo && _nivelStamina > 0;
+    }
+
+    private void SonsDePassos()
+    {
+        if(_characterController.velocity == Vector3.zero || !_estaNoChao)
+        {
+            _temporizadorPassos = _intervaloPassosAndando;
+            return;
+        }
+        _temporizadorPassos -= Time.deltaTime;
+        if(_temporizadorPassos <= 0f)
+        {
+            int indice = Random.Range(0, _passosAudioClips.Length);
+            _passosAudioSource.PlayOneShot(_passosAudioClips[indice]);
+
+            _temporizadorPassos = _estaCorrendo && _nivelStamina >= 0f ? _intervaloPassosCorrendo : _intervaloPassosAndando;
+        }
     }
 }

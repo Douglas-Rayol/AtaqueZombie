@@ -1,5 +1,7 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class InterfaceDeUsuario : MonoBehaviour
@@ -22,6 +24,19 @@ public class InterfaceDeUsuario : MonoBehaviour
     [SerializeField] private GameObject _gameoverPanel;
     [SerializeField] private TMP_Text _OndaText;
     [SerializeField] private TMP_Text _MonstrosText;
+
+    [SerializeField] private Volume _danoVolume;
+    [SerializeField] private AudioSource _danoAudioSource;
+    [SerializeField] private AudioSource _respiracaoAudioSouce;
+
+    private Coroutine _danoVolumeCoroutine;
+
+    [SerializeField] private Animator _headshotAnim;
+    [SerializeField] private AudioSource _headshotAudioSouce;
+
+    [SerializeField] private TMP_Text _pontosRecebidosText;
+    [SerializeField] private Animator _pontosRecebidosAnim;
+
     private void Awake()
     {
         if (_Instance == null)
@@ -59,6 +74,12 @@ public class InterfaceDeUsuario : MonoBehaviour
     public void AtualizarPontos(int _variacao, int saldoAtual)
     {
         _pontosText.text = "Pontos: " + saldoAtual;
+
+        if(_variacao > 0)
+        {
+            _pontosRecebidosText.text = "+" + _variacao;
+            _pontosRecebidosAnim.SetTrigger("Pontos");
+        }
     }
 
     public void ExibirMira(bool exibirMira)
@@ -83,5 +104,44 @@ public class InterfaceDeUsuario : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
 
         _MonstrosText.text = "Monstros Derrotados: " + Jogador.Instance.GetMonstrosDerrotados();
+    }
+
+    private IEnumerator DanoVolumeCoroutine()
+    {
+        _danoAudioSource.Play();
+        _respiracaoAudioSouce.Play();
+
+        while (_danoVolume.weight < 1)
+        {
+            _danoVolume.weight += Time.deltaTime;
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(2);
+
+        while (_danoVolume.weight > 0)
+        {
+            _danoVolume.weight -= Time.deltaTime;
+            yield return null;
+        }
+
+        _danoAudioSource.Stop();
+        _respiracaoAudioSouce.Stop();
+    }
+
+    public void AtivarEfeitoDeDano()
+    {
+        if(_danoVolumeCoroutine != null)
+        {
+            StopCoroutine(_danoVolumeCoroutine);
+        }
+
+        _danoVolumeCoroutine = StartCoroutine(DanoVolumeCoroutine());
+    }
+
+    public void ExecutarHeadshot()
+    {
+        _headshotAnim.SetTrigger("Headshot");
+        _headshotAudioSouce.PlayOneShot(_headshotAudioSouce.clip);
     }
 }

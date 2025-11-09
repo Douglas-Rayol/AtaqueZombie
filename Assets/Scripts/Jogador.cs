@@ -43,6 +43,8 @@ public class Jogador : MonoBehaviour
     {
         if (_estaMorto) return;
 
+        InterfaceDeUsuario._Instance.AtivarEfeitoDeDano();
+
         _vidaAtual -= valor;
         AtualizarBarraDeVida();
 

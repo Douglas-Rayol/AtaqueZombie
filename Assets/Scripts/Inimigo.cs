@@ -13,12 +13,18 @@ public class Inimigo : MonoBehaviour
     [SerializeField] private int _dano;
     [SerializeField] private HitBoxInimigo _hitBoxInimigo;
 
+    [SerializeField] private AudioSource _inimigoAudio;
+    [SerializeField] private AudioSource _inimigoAudioAtaque;
+    [SerializeField] private AudioClip[] _sonsinimigoClips;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _jogador = GameObject.FindGameObjectWithTag("Player").transform;
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _animator = GetComponent<Animator>();
+
+        InvokeRepeating(nameof(TocarSomDoInimigo), Random.Range(0f, 4f), Random.Range(4f, 8f));
     }
 
     // Update is called once per frame
@@ -62,6 +68,16 @@ public class Inimigo : MonoBehaviour
 
     public void RealizarAtaque()
     {
-        Jogador.Instance.ReduzirVida(_dano);
+        _inimigoAudioAtaque.Play();
+        if (_hitBoxInimigo.GetJoagadorNaHitbox())
+        {
+            Jogador.Instance.ReduzirVida(_dano);
+        }
+        
+    }
+
+    public void TocarSomDoInimigo()
+    {
+        _inimigoAudio.PlayOneShot(_sonsinimigoClips[Random.Range(0, _sonsinimigoClips.Length)]);
     }
 }
