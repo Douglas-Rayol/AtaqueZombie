@@ -27,6 +27,8 @@ public class ArmaCard : MonoBehaviour
             Jogador.Instance.ReduzirPontos(_valorDaArma);
             _gerenciadorDeArmas.EquiparNovaArma(_modelodaArma);
             _gerenciadorDeLoja.Fecharloja();
+
+            InterfaceDeUsuario._Instance.TocarSomDeCliqueLoja();
         }
     }
 
@@ -37,6 +39,8 @@ public class ArmaCard : MonoBehaviour
             Jogador.Instance.ReduzirPontos(_valorDaMunicao);
             _gerenciadorDeArmas.EquiparMunicao(_modelodaArma);
             _gerenciadorDeLoja.Fecharloja();
+
+            InterfaceDeUsuario._Instance.TocarSomDeCliqueLoja();
         }
     }
 }

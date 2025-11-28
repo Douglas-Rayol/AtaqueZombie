@@ -137,7 +137,7 @@ public class GerenciadorDeArmas : MonoBehaviour
 
             for(int i = 0; i < _balasParaRecarregar; i++)
             {
-                if(i == _balasParaRecarregar - 1)
+                if( i == _balasParaRecarregar - 1)
                 {
                     armaAtual._anim.SetTrigger("FimRecarregar");
                 }

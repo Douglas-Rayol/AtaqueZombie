@@ -33,6 +33,7 @@ public class InterfaceDeUsuario : MonoBehaviour
 
     [SerializeField] private Animator _headshotAnim;
     [SerializeField] private AudioSource _headshotAudioSouce;
+    [SerializeField] private AudioSource _somCliqueLoja;
 
     [SerializeField] private TMP_Text _pontosRecebidosText;
     [SerializeField] private Animator _pontosRecebidosAnim;
@@ -143,5 +144,10 @@ public class InterfaceDeUsuario : MonoBehaviour
     {
         _headshotAnim.SetTrigger("Headshot");
         _headshotAudioSouce.PlayOneShot(_headshotAudioSouce.clip);
+    }
+
+    public void TocarSomDeCliqueLoja()
+    {
+        _somCliqueLoja.Play();
     }
 }
