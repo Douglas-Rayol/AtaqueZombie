@@ -344,9 +344,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tirosPorSegundo: 8
-  _capacidadeDoPente: 24
-  _municaoNoInventario: 60
-  _quantidadeMaximaDeMunicaoNoInveentario: 60
+  _capacidadeDoPente: 28
+  _municaoNoInventario: 84
+  _quantidadeMaximaDeMunicaoNoInveentario: 84
   _municaoAtual: 0
   _efeitoDisparo: {fileID: 999892154}
   _padraoDeRecoil:
@@ -4690,7 +4690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tirosPorSegundo: 1
-  _capacidadeDoPente: 5
+  _capacidadeDoPente: 6
   _municaoNoInventario: 48
   _quantidadeMaximaDeMunicaoNoInveentario: 48
   _municaoAtual: 0
@@ -27803,9 +27803,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tirosPorSegundo: 2
-  _capacidadeDoPente: 12
-  _municaoNoInventario: 75
-  _quantidadeMaximaDeMunicaoNoInveentario: 75
+  _capacidadeDoPente: 6
+  _municaoNoInventario: 48
+  _quantidadeMaximaDeMunicaoNoInveentario: 48
   _municaoAtual: 0
   _efeitoDisparo: {fileID: 882935784}
   _padraoDeRecoil:
@@ -35530,9 +35530,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tirosPorSegundo: 10
-  _capacidadeDoPente: 45
-  _municaoNoInventario: 90
-  _quantidadeMaximaDeMunicaoNoInveentario: 90
+  _capacidadeDoPente: 100
+  _municaoNoInventario: 300
+  _quantidadeMaximaDeMunicaoNoInveentario: 300
   _municaoAtual: 0
   _efeitoDisparo: {fileID: 741871826}
   _padraoDeRecoil:
