@@ -212,7 +212,7 @@ AnimatorStateMachine:
     m_Position: {x: 290, y: -80, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2880195287290012346}
-    m_Position: {x: 290, y: 30, z: 0}
+    m_Position: {x: 290, y: 20, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 1878361721401972646}
@@ -719,7 +719,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Recarregar-Meio
-  m_Speed: 1
+  m_Speed: 1.1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 6501925702680778579}

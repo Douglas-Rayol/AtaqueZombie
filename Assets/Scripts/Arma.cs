@@ -108,5 +108,4 @@ public enum ModeloDaArma
     SMG,
     AK47,
     LMG,
-    FACA,
 }

@@ -9,7 +9,7 @@ public class ArmaCard : MonoBehaviour
     [SerializeField] private int _valorDaArma;
     [SerializeField] private int _valorDaMunicao;
 
-    [SerializeField] private ModeloDaArma _modelodaArma;
+    [SerializeField] private ModeloDaArma _modeloDaArma;
 
     [SerializeField] private GerenciadorDeArmas _gerenciadorDeArmas;
     [SerializeField] private GerenciadorDeLoja _gerenciadorDeLoja;
@@ -25,7 +25,7 @@ public class ArmaCard : MonoBehaviour
         if(Jogador.Instance.GetPontos() >= _valorDaArma)
         {
             Jogador.Instance.ReduzirPontos(_valorDaArma);
-            _gerenciadorDeArmas.EquiparNovaArma(_modelodaArma);
+            _gerenciadorDeArmas.EquiparNovaArma(_modeloDaArma);
             _gerenciadorDeLoja.Fecharloja();
 
             InterfaceDeUsuario._Instance.TocarSomDeCliqueLoja();
@@ -37,7 +37,7 @@ public class ArmaCard : MonoBehaviour
         if (Jogador.Instance.GetPontos() >= _valorDaMunicao)
         {
             Jogador.Instance.ReduzirPontos(_valorDaMunicao);
-            _gerenciadorDeArmas.EquiparMunicao(_modelodaArma);
+            _gerenciadorDeArmas.EquiparMunicao(_modeloDaArma);
             _gerenciadorDeLoja.Fecharloja();
 
             InterfaceDeUsuario._Instance.TocarSomDeCliqueLoja();
